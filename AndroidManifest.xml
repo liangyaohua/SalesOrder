@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.capgemini.SalesOrder"
+      android:versionCode="1"
+      android:versionName="1.0">
+      
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application 
+    	android:icon="@drawable/icon" 
+    	android:label="@string/app_name" >
+    	
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.LoginActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page1ListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Business Partners"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page1ListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page1CreateListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Business Partners"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page1CreateListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page2ListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Sales Orders"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page2ListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page2CreateListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Sales Orders"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page2CreateListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page3ListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Line Items"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page3ListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page3CreateListActivity"
+            android:configChanges="orientation"
+            android:icon="@drawable/icon"
+            android:label="Line Items"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.Page3CreateListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+		<activity
+            android:name=".Page4DetailsActivity"
+            android:configChanges="orientation"
+            android:label="Line Item"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+        </activity>
+
+		<activity
+            android:name=".Page5DetailsActivity"
+            android:configChanges="orientation"
+            android:label="Product"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+        </activity>
+
+		<activity
+            android:name=".Page6DetailsActivity"
+            android:configChanges="orientation"
+            android:label="Supplier"
+            android:theme="@android:style/Theme.DeviceDefault.Light" >
+        </activity>
+        <activity android:name=".preferences.MainPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+			<intent-filter>
+                <action android:name="com.capgemini.SalesOrder.preferences.MainPreferencesActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</activity>
+		<activity android:name=".preferences.GatewaySettingsPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+			<intent-filter>
+                <action android:name="com.capgemini.SalesOrder.preferences.GatewaySettingsPreferencesActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</activity>
+		<activity android:name=".preferences.SUPSettingsPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+			<intent-filter>
+                <action android:name="com.capgemini.SalesOrder.preferences.SUPSettingsPreferencesActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</activity>
+    </application>
+</manifest>

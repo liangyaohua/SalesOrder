@@ -139,7 +139,7 @@ public class Page2ListActivity extends ListActivity implements
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.list);
-		setTitle("Orders from " + parentEntry.getCompanyName());
+		setTitle(parentEntry.getCompanyName() + " > Orders");
 		// initialize the Logger
 		logger = new Logger();
 		

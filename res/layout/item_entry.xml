@@ -4,22 +4,31 @@
     android:layout_height="wrap_content"
  
    >    
-    <!--ImageView
+
+    <ImageView
         android:id="@+id/itemIcon"
-        android:src="@drawable/list_entry_icon" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="1dip" /-->
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/list_entry_icon" />
         
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/itemIcon"
         android:orientation="vertical" >
-    <!--android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/itemIcon"-->
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/naviIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/navigateto" />
 
 </RelativeLayout>

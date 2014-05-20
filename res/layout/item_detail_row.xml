@@ -37,7 +37,8 @@
             android:gravity="right"
             android:padding="3dp"
             android:scaleType="fitEnd"
-            android:visibility="invisible" android:contentDescription="TODO"/>
+            android:visibility="invisible" />
+
     </TableRow>
 
 </TableLayout>

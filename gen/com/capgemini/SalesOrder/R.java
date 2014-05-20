@@ -17,22 +17,27 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int capgemini=0x7f020000;
-        public static final int create_material_confirmation_48=0x7f020001;
+        public static final int bp=0x7f020000;
+        public static final int capgemini=0x7f020001;
         public static final int email=0x7f020002;
-        public static final int header=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int icon=0x7f020005;
+        public static final int ic_launcher=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int item=0x7f020005;
         public static final int list_entry_icon=0x7f020006;
-        public static final int navigateto=0x7f020007;
-        public static final int sap_icon=0x7f020008;
-        public static final int sap_logo=0x7f020009;
-        public static final int search=0x7f02000a;
-        public static final int tel=0x7f02000b;
-        public static final int url=0x7f02000c;
+        public static final int login=0x7f020007;
+        public static final int map=0x7f020008;
+        public static final int navigateto=0x7f020009;
+        public static final int order=0x7f02000a;
+        public static final int product=0x7f02000b;
+        public static final int sap_logo=0x7f02000c;
+        public static final int search=0x7f02000d;
+        public static final int setting=0x7f02000e;
+        public static final int supplier=0x7f02000f;
+        public static final int tel=0x7f020010;
+        public static final int url=0x7f020011;
     }
     public static final class id {
-        public static final int btnLogin=0x7f0a0018;
+        public static final int btnLogin=0x7f0a001a;
         public static final int button1=0x7f0a0007;
         public static final int checkBox1=0x7f0a0004;
         public static final int createProgressBar=0x7f0a0002;
@@ -40,16 +45,18 @@ public final class R {
         public static final int create_loading_view=0x7f0a0001;
         public static final int dateText=0x7f0a0006;
         public static final int editText=0x7f0a0008;
-        public static final int form=0x7f0a0015;
-        public static final int header=0x7f0a0014;
+        public static final int form=0x7f0a0017;
+        public static final int header=0x7f0a0016;
         public static final int imageView1=0x7f0a0011;
-        public static final int linearLayout1=0x7f0a0012;
+        public static final int itemIcon=0x7f0a0012;
+        public static final int linearLayout1=0x7f0a0013;
         public static final int loading_view=0x7f0a0009;
-        public static final int menu_item_logout=0x7f0a001a;
-        public static final int menu_item_settings=0x7f0a0019;
-        public static final int password=0x7f0a0017;
+        public static final int menu_item_logout=0x7f0a001c;
+        public static final int menu_item_settings=0x7f0a001b;
+        public static final int naviIcon=0x7f0a0014;
+        public static final int password=0x7f0a0019;
         public static final int progressBar1=0x7f0a000a;
-        public static final int search_box=0x7f0a0013;
+        public static final int search_box=0x7f0a0015;
         public static final int submitBtn=0x7f0a0003;
         public static final int tableLayout1=0x7f0a000b;
         public static final int tableRow1=0x7f0a000d;
@@ -58,7 +65,7 @@ public final class R {
         public static final int textView0=0x7f0a000c;
         public static final int textView1=0x7f0a000e;
         public static final int textView2=0x7f0a0010;
-        public static final int username=0x7f0a0016;
+        public static final int username=0x7f0a0018;
     }
     public static final class layout {
         public static final int create=0x7f030000;

@@ -27,6 +27,7 @@
         
         <activity
             android:name=".LoginActivity"
+            android:icon="@drawable/login"
             android:label="Login"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -38,7 +39,7 @@
 		<activity
             android:name=".Page1ListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/bp"
             android:label="Business Partners"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -50,7 +51,7 @@
 		<activity
             android:name=".Page1CreateListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/bp"
             android:label="Business Partners"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -62,7 +63,7 @@
 		<activity
             android:name=".Page2ListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/order"
             android:label="Sales Orders"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -74,7 +75,7 @@
 		<activity
             android:name=".Page2CreateListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/order"
             android:label="Sales Orders"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -86,7 +87,7 @@
 		<activity
             android:name=".Page3ListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/item"
             android:label="Line Items"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -98,7 +99,7 @@
 		<activity
             android:name=".Page3CreateListActivity"
             android:configChanges="orientation"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/item"
             android:label="Line Items"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
             <intent-filter>
@@ -117,6 +118,7 @@
 		<activity
             android:name=".Page5DetailsActivity"
             android:configChanges="orientation"
+            android:icon="@drawable/product"
             android:label="Product"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
         </activity>
@@ -124,22 +126,23 @@
 		<activity
             android:name=".Page6DetailsActivity"
             android:configChanges="orientation"
+            android:icon="@drawable/supplier"
             android:label="Supplier"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
         </activity>
-        <activity android:name=".preferences.MainPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+        <activity android:name=".preferences.MainPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.MainPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 		</activity>
-		<activity android:name=".preferences.GatewaySettingsPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+		<activity android:name=".preferences.GatewaySettingsPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.GatewaySettingsPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 		</activity>
-		<activity android:name=".preferences.SUPSettingsPreferencesActivity" android:theme="@android:style/Theme.DeviceDefault.Light">
+		<activity android:name=".preferences.SUPSettingsPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.SUPSettingsPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

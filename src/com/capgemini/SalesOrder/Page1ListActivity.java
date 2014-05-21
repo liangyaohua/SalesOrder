@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Process;
+//import android.os.Process;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -165,6 +165,7 @@ public class Page1ListActivity extends ListActivity implements
 		BusinessPartner item = (BusinessPartner) listAdapter.getItem(position);
 		
 		Page2ListActivity.parentEntry = item;
+		Page2ListActivity.bpAddress = String.valueOf(item.getBuilding()) + " " + String.valueOf(item.getStreet()) + ", " + String.valueOf(item.getCity()) + ", " + String.valueOf(item.getCountry());
 		
 		// navigation to next screen
 		startActivity(intent);
@@ -245,9 +246,11 @@ public class Page1ListActivity extends ListActivity implements
 							 @Override
 							 protected void onPostExecute(Boolean result)
 							 {
-								// In the first page use finish to quit the application
+								// 	logout and return to the login page
+								//	Process.killProcess(Process.myPid());
+								Intent intent = new Intent(Page1ListActivity.this, LoginActivity.class);
+								startActivity(intent);
 								finish();
-								Process.killProcess(Process.myPid());
 							 }
 						}).execute();
 					break;

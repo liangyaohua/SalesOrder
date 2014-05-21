@@ -20,8 +20,10 @@ import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.Product;
  */
 public class Page5DetailsAdapter extends BaseAdapter
 {
-	public static enum SapSemantics {tel, email, url};
+	public static enum SapSemantics {map, tel, email, url};
 	
+	protected static String bpAddress;
+	protected static String buyer;
 
 	private Context mContext;
 	private Product entry;
@@ -55,6 +57,9 @@ public class Page5DetailsAdapter extends BaseAdapter
 		propertiesValues.add(String.valueOf(entry.getDescription()));
 		labels.add(Product.getLabelForProperty("Description"));
 		sapSemanticsList.add(null);
+		propertiesValues.add(bpAddress);
+		labels.add(Product.getLabelForProperty("Deliver to " + buyer));
+		sapSemanticsList.add("map");
 	}
 
 	/**
@@ -140,7 +145,7 @@ public class Page5DetailsAdapter extends BaseAdapter
 					Intent intent = new Intent(mContext, Page6DetailsActivity.class);
 
 					Page6DetailsActivity.parentEntry = entry;
-
+					
 					mContext.startActivity(intent);
 				}
 			});
@@ -161,7 +166,10 @@ public class Page5DetailsAdapter extends BaseAdapter
 		if (sapSemantics != null)
 		{
 			switch (sapSemantics)
-			{
+			{	
+				case map:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.map);
+							holder.imageView.setVisibility(View.VISIBLE);
+							break;
 				case tel:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.tel);
 							holder.imageView.setVisibility(View.VISIBLE);
 						    break;

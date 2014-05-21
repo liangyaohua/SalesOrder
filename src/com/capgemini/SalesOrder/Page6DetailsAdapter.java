@@ -18,7 +18,7 @@ import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.BusinessPartner;
  */
 public class Page6DetailsAdapter extends BaseAdapter
 {
-	public static enum SapSemantics {tel, email, url};
+	public static enum SapSemantics {map, tel, email, url};
 	
 
 	private Context mContext;
@@ -44,27 +44,15 @@ public class Page6DetailsAdapter extends BaseAdapter
 		propertiesValues.add(String.valueOf(entry.getCompanyName()));
 		labels.add(BusinessPartner.getLabelForProperty("Company"));
 		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getCountry()));
-		labels.add(BusinessPartner.getLabelForProperty("Country"));
-		sapSemanticsList.add("country");
-		propertiesValues.add(String.valueOf(entry.getCity()));
-		labels.add(BusinessPartner.getLabelForProperty("City"));
-		sapSemanticsList.add("city");
 		propertiesValues.add(String.valueOf(entry.getPostalCode()));
 		labels.add(BusinessPartner.getLabelForProperty("PostalCode"));
-		sapSemanticsList.add("zip");
-		propertiesValues.add(String.valueOf(entry.getStreet()));
-		labels.add(BusinessPartner.getLabelForProperty("Street"));
-		sapSemanticsList.add("street");
-		propertiesValues.add(String.valueOf(entry.getBuilding()));
-		labels.add(BusinessPartner.getLabelForProperty("Building"));
 		sapSemanticsList.add(null);
+		propertiesValues.add(String.valueOf(entry.getBuilding()) + " " + String.valueOf(entry.getStreet()) + ", " + String.valueOf(entry.getCity()) + ", " + String.valueOf(entry.getCountry()));
+		labels.add(BusinessPartner.getLabelForProperty("Address"));
+		sapSemanticsList.add("map");
 		propertiesValues.add(String.valueOf(entry.getPhoneNumber()));
 		labels.add(BusinessPartner.getLabelForProperty("Tel"));
 		sapSemanticsList.add("tel");
-		propertiesValues.add(String.valueOf(entry.getFaxNumber()));
-		labels.add(BusinessPartner.getLabelForProperty("Fax"));
-		sapSemanticsList.add(null);
 		propertiesValues.add(String.valueOf(entry.getEmailAddress()));
 		labels.add(BusinessPartner.getLabelForProperty("Email"));
 		sapSemanticsList.add("email");
@@ -144,6 +132,9 @@ public class Page6DetailsAdapter extends BaseAdapter
 		{
 			switch (sapSemantics)
 			{
+				case map:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.map);
+							holder.imageView.setVisibility(View.VISIBLE);
+							break;
 				case tel:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.tel);
 							holder.imageView.setVisibility(View.VISIBLE);
 						    break;

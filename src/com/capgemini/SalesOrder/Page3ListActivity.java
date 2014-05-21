@@ -36,6 +36,8 @@ public class Page3ListActivity extends ListActivity implements
 	public static final String TAG = "SalesOrder";
 	private ILogger logger;
 	protected static SalesOrder parentEntry;
+	protected static String bpAddress;
+	protected static String buyer;
 	
 	// result of List Request
 	private List<SalesOrderLineItem> entries;
@@ -158,6 +160,8 @@ public class Page3ListActivity extends ListActivity implements
 		SalesOrderLineItem item = (SalesOrderLineItem) listAdapter.getItem(position);
 		
 		Page5DetailsActivity.parentEntry = item;
+		Page5DetailsAdapter.bpAddress = bpAddress;
+		Page5DetailsAdapter.buyer = buyer;
 		
 		// navigation to next screen
 		startActivity(intent);

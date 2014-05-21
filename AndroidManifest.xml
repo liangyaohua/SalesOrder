@@ -108,12 +108,12 @@
             </intent-filter>
         </activity>
 
-		<activity
+		<!--activity
             android:name=".Page4DetailsActivity"
             android:configChanges="orientation"
             android:label="Line Item"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
-        </activity>
+        </activity-->
 
 		<activity
             android:name=".Page5DetailsActivity"

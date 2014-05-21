@@ -86,6 +86,11 @@ public class Page6DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 		
 		switch (sapSemantics)
 		{
+			case map: 	Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
+				    	Uri.parse("geo:0,0?q=" + value));
+						startActivity(intent);
+						break;
+						
 			case tel:   Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + value));
 					    startActivity(callIntent);
 					    break;

@@ -113,7 +113,7 @@ public class Page2ListAdapter extends BaseAdapter
 		//set the first property to bigger font
 		SoIdTextView.setTextSize(22); 
 		SoIdTextView.setText(getPropertyValue(String.valueOf(entry.getSoId())));
-		holder.ll.addView(SoIdTextView);	
+		holder.ll.addView(SoIdTextView);		
 		
 		TextView AmountTextView = new TextView(mContext);
 		AmountTextView.setText("Amount: " + getPropertyValue(String.valueOf(entry.getGrossAmount())) + " " + getPropertyValue(String.valueOf(entry.getCurrencyCode())) + ", includes Tax: " + getPropertyValue(String.valueOf(entry.getTaxAmount())) + " " + getPropertyValue(String.valueOf(entry.getCurrencyCode())));
@@ -126,10 +126,6 @@ public class Page2ListAdapter extends BaseAdapter
 		TextView DeliveryStatusTextView = new TextView(mContext);
 		DeliveryStatusTextView.setText("Delivery Status: " + getPropertyValue(String.valueOf(entry.getDeliveryStatus())));
 		holder.ll.addView(DeliveryStatusTextView);	
-		
-		TextView LifecycleStatusTextView = new TextView(mContext);
-		LifecycleStatusTextView.setText("Lifecycle Status: " + getPropertyValue(String.valueOf(entry.getLifecycleStatus())));
-		holder.ll.addView(LifecycleStatusTextView);	
 		
 		TextView NoteTextView = new TextView(mContext);
 		NoteTextView.setText("Note: " + getPropertyValue(String.valueOf(entry.getNote())));

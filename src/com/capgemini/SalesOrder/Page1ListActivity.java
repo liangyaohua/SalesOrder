@@ -165,7 +165,6 @@ public class Page1ListActivity extends ListActivity implements
 		BusinessPartner item = (BusinessPartner) listAdapter.getItem(position);
 		
 		Page2ListActivity.parentEntry = item;
-		Page2ListActivity.bpAddress = String.valueOf(item.getBuilding()) + " " + String.valueOf(item.getStreet()) + ", " + String.valueOf(item.getCity()) + ", " + String.valueOf(item.getCountry());
 		
 		// navigation to next screen
 		startActivity(intent);

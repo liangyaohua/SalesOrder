@@ -37,6 +37,9 @@ public final class R {
         public static final int url=0x7f020011;
     }
     public static final class id {
+        public static final int action_email=0x7f0a001d;
+        public static final int action_map=0x7f0a001f;
+        public static final int action_tel=0x7f0a001e;
         public static final int btnLogin=0x7f0a001a;
         public static final int button1=0x7f0a0007;
         public static final int checkBox1=0x7f0a0004;
@@ -82,6 +85,7 @@ public final class R {
     }
     public static final class menu {
         public static final int main_menu=0x7f090000;
+        public static final int my_menu=0x7f090001;
     }
     public static final class raw {
         public static final int zgwsample_srvv0document=0x7f050000;
@@ -98,6 +102,7 @@ public final class R {
         /**  Main Preferences Strings 
          */
         public static final int connection_type=0x7f070000;
+        public static final int email=0x7f07002b;
         public static final int err_msg=0x7f070028;
         public static final int farm_id=0x7f070010;
         public static final int gateway_connection_type=0x7f070001;
@@ -114,6 +119,7 @@ public final class R {
         public static final int logout_title=0x7f07001d;
         public static final int main_gw_validation=0x7f070016;
         public static final int main_sup_validation=0x7f070015;
+        public static final int map=0x7f07002d;
         public static final int navigateto=0x7f07001a;
         public static final int no=0x7f070022;
         public static final int no_results=0x7f070020;
@@ -133,6 +139,7 @@ public final class R {
         public static final int sup_port=0x7f07000c;
         public static final int sup_settings=0x7f070004;
         public static final int sup_validation_msg=0x7f070013;
+        public static final int tel=0x7f07002c;
         public static final int url_suffix=0x7f070011;
         public static final int user_name=0x7f070024;
         /**  Preferences Validation Strings 

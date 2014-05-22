@@ -130,19 +130,31 @@
             android:label="Supplier"
             android:theme="@android:style/Theme.DeviceDefault.Light" >
         </activity>
-        <activity android:name=".preferences.MainPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
+        <activity 
+            android:name=".preferences.MainPreferencesActivity" 
+            android:icon="@drawable/setting"
+            android:label="Setting" 
+            android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.MainPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 		</activity>
-		<activity android:name=".preferences.GatewaySettingsPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
+		<activity 
+		    android:name=".preferences.GatewaySettingsPreferencesActivity" 
+		    android:icon="@drawable/setting" 
+		     android:label="Gateway Setting" 
+		    android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.GatewaySettingsPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 		</activity>
-		<activity android:name=".preferences.SUPSettingsPreferencesActivity" android:icon="@drawable/setting" android:theme="@android:style/Theme.DeviceDefault.Light">
+		<activity 
+		    android:name=".preferences.SUPSettingsPreferencesActivity" 
+		    android:icon="@drawable/setting"
+		     android:label="SMP Setting"  
+		    android:theme="@android:style/Theme.DeviceDefault.Light">
 			<intent-filter>
                 <action android:name="com.capgemini.SalesOrder.preferences.SUPSettingsPreferencesActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

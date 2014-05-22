@@ -4,10 +4,13 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -16,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capgemini.SalesOrder.preferences.MainPreferencesActivity;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.ZGWSAMPLE_SRVRequestHandler;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.BusinessPartner;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.SalesOrder;
@@ -36,7 +40,6 @@ public class Page2ListActivity extends ListActivity implements
 	public static final String TAG = "SalesOrder";
 	private ILogger logger;
 	protected static BusinessPartner parentEntry;
-	protected static String bpAddress;
 	
 	// result of List Request
 	private List<SalesOrder> entries;
@@ -151,7 +154,7 @@ public class Page2ListActivity extends ListActivity implements
 		// the response should be in "requestCompleted"
 		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).loadSalesOrdersForBusinessPartner((BusinessPartner) parentEntry);
 	}
-
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id)
 	{
@@ -159,8 +162,9 @@ public class Page2ListActivity extends ListActivity implements
 		SalesOrder item = (SalesOrder) listAdapter.getItem(position);
 		
 		Page3ListActivity.parentEntry = item;
-		Page3ListActivity.bpAddress = bpAddress;
-		Page3ListActivity.buyer = item.getBuyerName();
+		Page3ListActivity.bpAddress = String.valueOf(parentEntry.getBuilding()) + " " + String.valueOf(parentEntry.getStreet()) + ", " + String.valueOf(parentEntry.getCity()) + ", " + String.valueOf(parentEntry.getCountry());
+		Page3ListActivity.bpTel = parentEntry.getPhoneNumber();
+		Page3ListActivity.bpEmail = parentEntry.getEmailAddress();
 		
 		// navigation to next screen
 		startActivity(intent);

@@ -4,10 +4,13 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -37,7 +40,8 @@ public class Page3ListActivity extends ListActivity implements
 	private ILogger logger;
 	protected static SalesOrder parentEntry;
 	protected static String bpAddress;
-	protected static String buyer;
+	protected static String bpTel;
+	protected static String bpEmail;
 	
 	// result of List Request
 	private List<SalesOrderLineItem> entries;
@@ -152,7 +156,44 @@ public class Page3ListActivity extends ListActivity implements
 		// the response should be in "requestCompleted"
 		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).loadLineItemsForSalesOrder((SalesOrder) parentEntry);
 	}
-
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
+		getMenuInflater().inflate(com.capgemini.SalesOrder.R.menu.my_menu, menu);
+		
+		return true;		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		switch (item.getItemId())
+		{
+			case com.capgemini.SalesOrder.R.id.action_email:
+				Intent emailIntent = new Intent(Intent.ACTION_SEND);
+				emailIntent.setType("plain/text");
+				emailIntent.putExtra(Intent.EXTRA_EMAIL,  new String [] {bpEmail});
+				emailIntent.putExtra(Intent.EXTRA_CC,  new String [] {"yaohua.liang@capgemini.com"});
+				emailIntent.putExtra(Intent.EXTRA_SUBJECT, parentEntry.getBuyerName() + ": Issues about your order n° " + parentEntry.getSoId());
+				emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear customer, \n\nI'm the Sales Manager at Capgemini, we're sorry that one of the products in your order n° " + parentEntry.getSoId() + " is not available at the moment, we're contacting the supplier and the products will be delivered to you as soon as possible. \n\nThanks for your comprehension! \n\nBest regards,\nYaohua LIANG");
+				startActivity(Intent.createChooser(emailIntent, ""));
+				return true;
+			case com.capgemini.SalesOrder.R.id.action_tel:
+				Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + bpTel));
+		    	startActivity(callIntent);
+		    	return true;
+			case com.capgemini.SalesOrder.R.id.action_map:
+				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
+				Uri.parse("geo:0,0?q=" + bpAddress));
+				startActivity(intent);
+				return true;
+			default:
+				super.onOptionsItemSelected(item);
+				return false;
+		}
+	}
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id)
 	{
@@ -161,7 +202,7 @@ public class Page3ListActivity extends ListActivity implements
 		
 		Page5DetailsActivity.parentEntry = item;
 		Page5DetailsAdapter.bpAddress = bpAddress;
-		Page5DetailsAdapter.buyer = buyer;
+		Page5DetailsAdapter.buyer = parentEntry.getBuyerName();
 		
 		// navigation to next screen
 		startActivity(intent);

@@ -109,15 +109,16 @@ public class Page1ListAdapter extends BaseAdapter
 		
 		BusinessPartner entry = filteredEntries.get(position);
 		
-		TextView BusinessPartnerIDTextView = new TextView(mContext);
+		TextView CompanyNameTextView = new TextView(mContext);
 		//set the first property to bigger font
-		BusinessPartnerIDTextView.setTextSize(22); 
+		CompanyNameTextView.setTextSize(22);
+		CompanyNameTextView.setText(getPropertyValue(String.valueOf(entry.getCompanyName())));
+		holder.ll.addView(CompanyNameTextView);	
+		
+		TextView BusinessPartnerIDTextView = new TextView(mContext); 
 		BusinessPartnerIDTextView.setText(getPropertyValue(String.valueOf(entry.getBusinessPartnerID())));
 		holder.ll.addView(BusinessPartnerIDTextView);	
 		
-		TextView CompanyNameTextView = new TextView(mContext);
-		CompanyNameTextView.setText(getPropertyValue(String.valueOf(entry.getCompanyName())));
-		holder.ll.addView(CompanyNameTextView);	
 		return rowView;
 	}
 	

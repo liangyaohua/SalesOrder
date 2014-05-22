@@ -145,7 +145,9 @@ public class Page3ListActivity extends ListActivity implements
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.list);
-		setTitle(parentEntry.getBuyerName() + " > " + parentEntry.getSoId() + " > Items");
+		setTitle(parentEntry.getBuyerName() + " - " + parentEntry.getSoId() + " - Items");
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// initialize the Logger
 		logger = new Logger();
 		

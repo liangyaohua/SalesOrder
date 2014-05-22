@@ -65,7 +65,11 @@
             android:configChanges="orientation"
             android:icon="@drawable/order"
             android:label="Sales Orders"
-            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            android:theme="@android:style/Theme.DeviceDefault.Light" 
+            android:parentActivityName=".Page1ListActivity" >
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value=".Page1ListActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.Page2ListActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -89,7 +93,11 @@
             android:configChanges="orientation"
             android:icon="@drawable/item"
             android:label="Line Items"
-            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            android:theme="@android:style/Theme.DeviceDefault.Light" 
+            android:parentActivityName=".Page2ListActivity" >
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value=".Page2ListActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.Page3ListActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -120,7 +128,11 @@
             android:configChanges="orientation"
             android:icon="@drawable/product"
             android:label="Product"
-            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            android:theme="@android:style/Theme.DeviceDefault.Light" 
+			android:parentActivityName=".Page3ListActivity" >
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value=".Page3ListActivity" />
         </activity>
 
 		<activity
@@ -128,7 +140,11 @@
             android:configChanges="orientation"
             android:icon="@drawable/supplier"
             android:label="Supplier"
-            android:theme="@android:style/Theme.DeviceDefault.Light" >
+            android:theme="@android:style/Theme.DeviceDefault.Light" 
+			android:parentActivityName=".Page5DetailsActivity" >
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value=".Page5DetailsActivity" />
         </activity>
         <activity 
             android:name=".preferences.MainPreferencesActivity" 

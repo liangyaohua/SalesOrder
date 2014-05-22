@@ -122,6 +122,8 @@ public class Page5DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.details);
 		setTitle(parentEntry.getProductId());
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// initialize the Logger
 		logger = new SDMLogger();
 		// register to listen to notifications from the Request Handler

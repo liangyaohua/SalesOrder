@@ -4,13 +4,10 @@ import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -19,7 +16,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.capgemini.SalesOrder.preferences.MainPreferencesActivity;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.ZGWSAMPLE_SRVRequestHandler;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.BusinessPartner;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.SalesOrder;
@@ -143,7 +139,10 @@ public class Page2ListActivity extends ListActivity implements
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.list);
-		setTitle(parentEntry.getCompanyName() + " > Orders");
+		setTitle(parentEntry.getCompanyName() + " - Orders");
+		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		// initialize the Logger
 		logger = new Logger();
 		

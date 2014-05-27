@@ -116,12 +116,17 @@
             </intent-filter>
         </activity>
 
-		<!--activity
+		<activity
             android:name=".Page4DetailsActivity"
             android:configChanges="orientation"
-            android:label="Line Item"
-            android:theme="@android:style/Theme.DeviceDefault.Light" >
-        </activity-->
+            android:icon="@drawable/supplier"
+            android:label="Contact"
+            android:theme="@android:style/Theme.DeviceDefault.Light" 
+            android:parentActivityName=".Page2ListActivity" >
+            <meta-data
+	            android:name="android.support.PARENT_ACTIVITY"
+	            android:value=".Page2ListActivity" />
+        </activity>
 
 		<activity
             android:name=".Page5DetailsActivity"

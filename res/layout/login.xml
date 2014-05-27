@@ -111,7 +111,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="60dp"
-            android:contentDescription="@string/Capgemini"
+            android:contentDescription="@string/capgemini"
             android:src="@drawable/capgemini" />
 
     </RelativeLayout>

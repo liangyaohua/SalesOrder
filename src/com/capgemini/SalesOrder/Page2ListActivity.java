@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -16,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capgemini.SalesOrder.preferences.MainPreferencesActivity;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.ZGWSAMPLE_SRVRequestHandler;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.BusinessPartner;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.SalesOrder;
@@ -152,6 +155,29 @@ public class Page2ListActivity extends ListActivity implements
 		// make the request
 		// the response should be in "requestCompleted"
 		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).loadSalesOrdersForBusinessPartner((BusinessPartner) parentEntry);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
+		getMenuInflater().inflate(com.capgemini.SalesOrder.R.menu.another_menu, menu);
+		return true;		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+		switch (item.getItemId()) 
+		{
+			case com.capgemini.SalesOrder.R.id.action_contact:
+				Intent intent = new Intent(this, Page4DetailsActivity.class);
+				Page4DetailsActivity.parentEntry = parentEntry;
+				startActivity(intent);
+				return true;
+			default:
+				super.onOptionsItemSelected(item);
+				return false;
+		}
 	}
 	
 	@Override

@@ -37,9 +37,10 @@ public final class R {
         public static final int url=0x7f020011;
     }
     public static final class id {
-        public static final int action_email=0x7f0a001d;
-        public static final int action_map=0x7f0a001f;
-        public static final int action_tel=0x7f0a001e;
+        public static final int action_contact=0x7f0a001b;
+        public static final int action_email=0x7f0a001e;
+        public static final int action_map=0x7f0a0020;
+        public static final int action_tel=0x7f0a001f;
         public static final int btnLogin=0x7f0a001a;
         public static final int button1=0x7f0a0007;
         public static final int checkBox1=0x7f0a0004;
@@ -54,8 +55,8 @@ public final class R {
         public static final int itemIcon=0x7f0a0012;
         public static final int linearLayout1=0x7f0a0013;
         public static final int loading_view=0x7f0a0009;
-        public static final int menu_item_logout=0x7f0a001c;
-        public static final int menu_item_settings=0x7f0a001b;
+        public static final int menu_item_logout=0x7f0a001d;
+        public static final int menu_item_settings=0x7f0a001c;
         public static final int naviIcon=0x7f0a0014;
         public static final int password=0x7f0a0019;
         public static final int progressBar1=0x7f0a000a;
@@ -84,24 +85,26 @@ public final class R {
         public static final int splash=0x7f03000a;
     }
     public static final class menu {
-        public static final int main_menu=0x7f090000;
-        public static final int my_menu=0x7f090001;
+        public static final int another_menu=0x7f090000;
+        public static final int main_menu=0x7f090001;
+        public static final int my_menu=0x7f090002;
     }
     public static final class raw {
         public static final int zgwsample_srvv0document=0x7f050000;
         public static final int zgwsample_srvv0metadata=0x7f050001;
     }
     public static final class string {
-        public static final int Capgemini=0x7f07002a;
         public static final int app_name=0x7f070017;
         public static final int application_id=0x7f07000e;
         public static final int asterisk=0x7f070027;
         /**  Gateway Settings Preferences Strings 
          */
         public static final int authentication_method=0x7f070005;
+        public static final int capgemini=0x7f07002a;
         /**  Main Preferences Strings 
          */
         public static final int connection_type=0x7f070000;
+        public static final int contact=0x7f07002e;
         public static final int email=0x7f07002b;
         public static final int err_msg=0x7f070028;
         public static final int farm_id=0x7f070010;

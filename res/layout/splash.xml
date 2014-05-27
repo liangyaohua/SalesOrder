@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:contentDescription="@string/Capgemini"
+        android:contentDescription="@string/capgemini"
         android:src="@drawable/capgemini" />
 
 </ScrollView>

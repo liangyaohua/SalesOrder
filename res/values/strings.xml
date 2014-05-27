@@ -19,8 +19,9 @@
     <string name="asterisk">*</string>
     <string name="err_msg">The request has returned with an error: </string>
     <string name="ok_msg">The request was successful</string>
-    <string name="Capgemini">Capgemini logo</string>
-    <string name="email">Send email</string>
+    <string name="capgemini">Capgemini logo</string>
+    <string name="email">Email buyer</string>
     <string name="tel">Call buyer</string>
     <string name="map">Destination</string>
+    <string name="contact">Contact</string>
 </resources>

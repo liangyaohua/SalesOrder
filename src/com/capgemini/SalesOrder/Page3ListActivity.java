@@ -178,7 +178,7 @@ public class Page3ListActivity extends ListActivity implements
 				emailIntent.putExtra(Intent.EXTRA_EMAIL,  new String [] {bpEmail});
 				emailIntent.putExtra(Intent.EXTRA_CC,  new String [] {"yaohua.liang@capgemini.com"});
 				emailIntent.putExtra(Intent.EXTRA_SUBJECT, parentEntry.getBuyerName() + ": Issues about your order n° " + parentEntry.getSoId());
-				emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear customer, \n\nI'm the Sales Manager at Capgemini, we're sorry that one of the products in your order n° " + parentEntry.getSoId() + " is not available at the moment, we're contacting the supplier and the products will be delivered to you as soon as possible. \n\nThanks for your comprehension! \n\nBest regards,\nYaohua LIANG");
+				emailIntent.putExtra(Intent.EXTRA_TEXT, "Dear customer, \n\nI'm the Sales Manager at Steelcase, we're sorry that one of the products in your order n° " + parentEntry.getSoId() + " is not available at the moment, we're communicating with our supplier and the products will be delivered to you as soon as possible. \n\nThanks for your comprehension! \n\nBest regards,\nYaohua LIANG");
 				startActivity(Intent.createChooser(emailIntent, ""));
 				return true;
 			case com.capgemini.SalesOrder.R.id.action_tel:

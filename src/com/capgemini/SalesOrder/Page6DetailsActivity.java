@@ -122,6 +122,7 @@ public class Page6DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.details);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		setTitle("Supplier of " + parentEntry.getProductId());
 		
 		// initialize the Logger
 		logger = new SDMLogger();

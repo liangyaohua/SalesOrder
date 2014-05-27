@@ -4,27 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.SalesOrderLineItem;
+import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.Contact;
 	
 /**
  * Details adapter.
  */
 public class Page4DetailsAdapter extends BaseAdapter
 {
-	public static enum SapSemantics {tel, email, url};
+	public static enum SapSemantics {map, tel, email, url};
 	
 
 	private Context mContext;
-	private SalesOrderLineItem entry;
+	private Contact entry;
 
 	private List<String> propertiesValues = new ArrayList<String>();
 	private List<String> labels = new ArrayList<String>();
@@ -35,53 +33,29 @@ public class Page4DetailsAdapter extends BaseAdapter
 	 * @param c - application context.
 	 * @param e - entry.
 	 */
-	public Page4DetailsAdapter(Context c, SalesOrderLineItem e)
+	public Page4DetailsAdapter(Context c, Contact e)
 	{
 		
 		mContext = c;
 		entry = e;
-		propertiesValues.add(String.valueOf(entry.getSoId()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("SoId"));
+		propertiesValues.add("Mr. " + String.valueOf(entry.getFirstName()) + " " + String.valueOf(entry.getLastName()));
+		labels.add(Contact.getLabelForProperty("Name"));
 		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getProductId()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("ProductId"));
+		propertiesValues.add(String.valueOf(entry.getTitle()));
+		labels.add(Contact.getLabelForProperty("Title"));
 		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getQuantity()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("Quantity"));
+		propertiesValues.add(String.valueOf(entry.getPostalCode()));
+		labels.add(Contact.getLabelForProperty("PostalCode"));
 		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getQuantityUnit()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("QuantityUnit"));
-		sapSemanticsList.add("unit-of-measure");
-		propertiesValues.add(String.valueOf(entry.getGrossAmount()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("GrossAmount"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getGrossAmountExt()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("GrossAmountExt"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getNetAmount()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("NetAmount"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getNetAmountExt()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("NetAmountExt"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getTaxAmount()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("TaxAmount"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getTaxAmountExt()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("TaxAmountExt"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getCurrencyCode()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("CurrencyCode"));
-		sapSemanticsList.add("currency-code");
-		propertiesValues.add(String.valueOf(entry.getSoItemPos()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("SoItemPos"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getDeliveryDate()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("DeliveryDate"));
-		sapSemanticsList.add(null);
-		propertiesValues.add(String.valueOf(entry.getNote()));
-		labels.add(SalesOrderLineItem.getLabelForProperty("Note"));
-		sapSemanticsList.add(null);
+		propertiesValues.add(String.valueOf(entry.getBuilding()) + " " + String.valueOf(entry.getStreet()) + ", " + String.valueOf(entry.getCity()) + ", " + String.valueOf(entry.getCountry()));
+		labels.add(Contact.getLabelForProperty("Address"));
+		sapSemanticsList.add("map");
+		propertiesValues.add(String.valueOf(entry.getPhoneNumber()));
+		labels.add(Contact.getLabelForProperty("Tel"));
+		sapSemanticsList.add("tel");
+		propertiesValues.add(String.valueOf(entry.getEmailAddress()));
+		labels.add(Contact.getLabelForProperty("Email"));
+		sapSemanticsList.add("email");
 	}
 
 	/**
@@ -90,7 +64,7 @@ public class Page4DetailsAdapter extends BaseAdapter
 	 */
 	public int getCount()
 	{
-		return propertiesValues.size() + 1;
+		return propertiesValues.size();
 	}
 
 	/**
@@ -118,9 +92,6 @@ public class Page4DetailsAdapter extends BaseAdapter
 		public ImageView imageView;
 		public TextView textView1;
 		public TextView textView2;
-		public TableRow tableRow1;
-		public TableRow tableRow2;
-		public TextView textView0;
 	}
 		
 	public View getView(int position, View convertView, ViewGroup parent)
@@ -140,40 +111,11 @@ public class Page4DetailsAdapter extends BaseAdapter
 			holder.textView1.setTextSize(22);
 			holder.textView2 = (TextView) rowView.findViewById(com.capgemini.SalesOrder.R.id.textView2);
 			holder.imageView = (ImageView) rowView.findViewById(com.capgemini.SalesOrder.R.id.imageView1);
-			holder.tableRow1 = (TableRow) rowView.findViewById(com.capgemini.SalesOrder.R.id.tableRow1);
-			holder.tableRow2 = (TableRow) rowView.findViewById(com.capgemini.SalesOrder.R.id.tableRow2);
-			
-			holder.textView0 = (TextView) rowView.findViewById(com.capgemini.SalesOrder.R.id.textView0);	
 			rowView.setTag(holder);
 		}
 		
 		ViewHolder holder = (ViewHolder) rowView.getTag();
 		
-		// navigation to next page
-		if (position == propertiesValues.size())
-		{
-			holder.tableRow1.setVisibility(View.GONE);
-			holder.textView0.setVisibility(View.VISIBLE);
-			holder.imageView.setVisibility(View.VISIBLE);
-			holder.textView2.setText("Product");
-			holder.textView2.setTextSize(16);
-			
-			holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.navigateto);
-
-			holder.tableRow2.setOnClickListener(new android.view.View.OnClickListener()
-			{
-				public void onClick(View v)
-				{	
-					Intent intent = new Intent(mContext, Page5DetailsActivity.class);
-
-					Page5DetailsActivity.parentEntry = entry;
-
-					mContext.startActivity(intent);
-				}
-			});
-
-			return rowView;
-		}
 
 		String value = getPropertyValue(position);
 		String label = labels.get(position);
@@ -181,14 +123,15 @@ public class Page4DetailsAdapter extends BaseAdapter
 		holder.textView1.setText(label);
 		holder.textView2.setText(value);
 		holder.imageView.setVisibility(View.INVISIBLE);
-		holder.tableRow1.setVisibility(View.VISIBLE);
-		holder.textView0.setVisibility(View.GONE);
 		
 		SapSemantics sapSemantics = getSapSemantics(position);
 		if (sapSemantics != null)
 		{
 			switch (sapSemantics)
 			{
+				case map:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.map);
+							holder.imageView.setVisibility(View.VISIBLE);
+							break;
 				case tel:   holder.imageView.setImageResource(com.capgemini.SalesOrder.R.drawable.tel);
 							holder.imageView.setVisibility(View.VISIBLE);
 						    break;

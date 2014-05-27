@@ -12,7 +12,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.capgemini.SalesOrder.zgwsample_srv.v0.ZGWSAMPLE_SRVRequestHandler;
-import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.SalesOrderLineItem;
+import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.Contact;
+import com.capgemini.SalesOrder.zgwsample_srv.v0.entitytypes.BusinessPartner;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.helpers.IZGWSAMPLE_SRVRequestHandlerListener;
 import com.capgemini.SalesOrder.zgwsample_srv.v0.helpers.ZGWSAMPLE_SRVRequestID;
 import com.sap.gwpa.proxy.RequestStatus;
@@ -29,10 +30,10 @@ public class Page4DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 	public static final String TAG = "SalesOrder";
 	private ISDMLogger logger;
 	
-	protected static SalesOrderLineItem parentEntry;
+	protected static BusinessPartner parentEntry;
 	
 	// result of the Detail Request
-	private SalesOrderLineItem entry; 
+	private Contact entry; 
 
 	// handler for callbacks to the UI thread
 	final Handler mHandler = new Handler();
@@ -85,6 +86,11 @@ public class Page4DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 		
 		switch (sapSemantics)
 		{
+			case map: 	Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
+				    	Uri.parse("geo:0,0?q=" + value));
+						startActivity(intent);
+						break;
+						
 			case tel:   Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + value));
 					    startActivity(callIntent);
 					    break;
@@ -115,15 +121,17 @@ public class Page4DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(com.capgemini.SalesOrder.R.layout.details);
-		setTitle(parentEntry.getProductId());
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		setTitle(parentEntry.getCompanyName() + " - Contact");
+		
 		// initialize the Logger
 		logger = new SDMLogger();
 		// register to listen to notifications from the Request Handler
-		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).register(this, ZGWSAMPLE_SRVRequestID.LOAD_SALESORDERLINEITEMCOLLECTION_ENTRY);
+		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).register(this, ZGWSAMPLE_SRVRequestID.LOAD_CONTACTS_FOR_BUSINESSPARTNER);
 		
 		// make the request
 		// the response should be in "requestCompleted"
-		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).loadSalesOrderLineItemCollectionEntry(parentEntry.getSoItemPos(), parentEntry.getSoId());
+		ZGWSAMPLE_SRVRequestHandler.getInstance(getApplicationContext()).loadContactsForBusinessPartner(parentEntry);
 	}
 	
 	public void requestCompleted(ZGWSAMPLE_SRVRequestID requestID, List<?> entries, RequestStatus requestStatus) 
@@ -133,10 +141,10 @@ public class Page4DetailsActivity extends ListActivity implements IZGWSAMPLE_SRV
 
 		if (type == StatusType.OK) 
 		{
-			if (requestID.equals(ZGWSAMPLE_SRVRequestID.LOAD_SALESORDERLINEITEMCOLLECTION_ENTRY))
+			if (requestID.equals(ZGWSAMPLE_SRVRequestID.LOAD_CONTACTS_FOR_BUSINESSPARTNER))
 			{
 				// cast to the right type
-				this.entry = (SalesOrderLineItem) entries.get(0);
+				this.entry = (Contact) entries.get(0);
 				// post in the UI
 				mHandler.post(mUpdateResults);
 			}
